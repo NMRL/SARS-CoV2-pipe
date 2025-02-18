@@ -1,0 +1,11 @@
+#!/bin/bash
+
+REMOTE_USER="jevgen01"
+REMOTE_HOST="@ui-2.hpc.rtu.lv"
+REMOTE_DIR="/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly"
+LOCAL_DIR="/home/jbodrenko/Desktop/rtu_hpc_workspace/SARS-CoV2-pipe/"
+
+# Sync local changes to the remote
+rsync -avz --progress --info=progress2 \
+  --exclude={'devsync','.git','.vscode','__pycache__','*.pyc','*.pyo','.DS_Store'} \
+  "$LOCAL_DIR" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR"
