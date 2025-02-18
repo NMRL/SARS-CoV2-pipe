@@ -231,18 +231,18 @@ class Covid_downstream():
         self.update_share = update_share
 
         #static paths
-        self.report_folder_path = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/reports/"
-        self.mutation_file_folder = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/mutation_heatmap/mutation_files/"
-        self.pipe_report_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/pipeline_report.py"
-        self.mutstat_report_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/mutstat_report.py"
-        self.tessy_report_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/generate_tessy_report.py"
-        self.heatmap_update_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/update_heatmap_job.sh"
-        self.weekly_report_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/run_papermill.sh"
-        self.summary_file_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/update_database_file.py"
-        self.update_share_script = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/copy_to_c19_share.sh"
-        self.log_folder_path = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/covipipe_job_logs/"
-        self.papermill_path = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/tools/rbase_env/bin/papermill"
-        self.share_update_file_path = "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/resources/downstream/c19_share_update.txt"
+        self.report_folder_path = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/reports/"
+        self.mutation_file_folder = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/mutation_heatmap/mutation_files/"
+        self.pipe_report_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/pipeline_report.py"
+        self.mutstat_report_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/mutstat_report.py"
+        self.tessy_report_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/generate_tessy_report.py"
+        self.heatmap_update_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/update_heatmap_job.sh"
+        self.weekly_report_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/run_papermill.sh"
+        self.summary_file_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/update_database_file.py"
+        self.update_share_script = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/subscripts/downstream/copy_to_c19_share.sh"
+        self.log_folder_path = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/covipipe_job_logs/"
+        self.papermill_path = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/tools/rbase_env/bin/papermill"
+        self.share_update_file_path = "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/resources/downstream/c19_share_update.txt"
 
         #operational variables
         self.current_summary_file = None
@@ -319,7 +319,7 @@ class Covid_downstream():
                 sys.exit(f'Summary file update failed\nSee {log_path} for details')
         else:
             print(f'Summary file update skipped, assuming the file is up-to-date.')
-        self.current_summary_file = [f'/mnt/beegfs2/home/groups/nmrl/cov_analysis/analysis_history/{file}' for file in os.listdir('/mnt/beegfs2/home/groups/nmrl/cov_analysis/analysis_history/') if 'summary_file' in file][0]
+        self.current_summary_file = [f'/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/analysis_history/{file}' for file in os.listdir('/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/analysis_history/') if 'summary_file' in file][0]
 
 
     def copy_mutation_files(self):

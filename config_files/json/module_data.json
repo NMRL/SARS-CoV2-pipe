@@ -1,8 +1,8 @@
 {
-    "cluster_config": "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/config_files/yaml/cluster.yaml",
+    "cluster_config": "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/config_files/yaml/cluster.yaml",
     "snakefiles": {
-        "assembly": "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/snakefiles/cov_assembly",
-        "downstream": "/mnt/beegfs2/home/groups/nmrl/cov_analysis/SARS-CoV2_assembly/snakefiles/cov_downstream"
+        "assembly": "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/snakefiles/cov_assembly",
+        "downstream": "/mnt/beegfs2/home/groups/nmrl/virus_analysis/cov_analysis/SARS-CoV2_assembly/snakefiles/cov_downstream"
     },
     "assembly": {
         "targets": [
