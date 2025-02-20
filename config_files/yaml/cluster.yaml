@@ -131,7 +131,7 @@ fastq_screening:
   jobname: "covipipe.fastq_screening"
   procs: 8
   pmem: "1500mb"
-  walltime: "00:17:00" #7MIn
+  walltime: "01:00:00" #7MIn
   account: "rakus"
   feature: "vasara" 
   queue: "batch"
@@ -142,7 +142,7 @@ vcf_to_csv:
   jobname: "covipipe.vcf_to_csv"
   procs: 8
   pmem: "1500mb"
-  walltime: "00:03:30"
+  walltime: "00:10:30"
   account: "rakus"
   feature: "vasara"
   queue: "batch"

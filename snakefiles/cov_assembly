@@ -223,8 +223,8 @@ rule fastq_screening: #ok
         cd {config[fq_screen_db_path]}
         downsample_r1=$(zcat {input.read_1} | echo $((`wc -l`/(4*{config[read1_downsample_fraction]}))))
         downsample_r2=$(zcat {input.read_2} | echo $((`wc -l`/(4*{config[read2_downsample_fraction]}))))
-        singularity --silent run --bind {config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]}:{config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]} {input.fastq_sceen_sif} fastq_screen --aligner {config[fq_screen_aligner]} --subset $downsample_r1 -conf {config[fq_screen_config]} {input.read_1} --outdir {config[output_directory]}
-        singularity --silent run --bind {config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]}:{config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]} {input.fastq_sceen_sif} fastq_screen --aligner {config[fq_screen_aligner]} --subset $downsample_r2 -conf {config[fq_screen_config]} {input.read_2} --outdir {config[output_directory]}
+        singularity --silent run --bind {config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]}:{config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]} {input.fastq_sceen_sif} fastq_screen --force --aligner {config[fq_screen_aligner]} --subset $downsample_r1 -conf {config[fq_screen_config]} {input.read_1} --outdir {config[output_directory]}
+        singularity --silent run --bind {config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]}:{config[output_directory]},{config[work_dir]},{config[fq_screen_db_path]} {input.fastq_sceen_sif} fastq_screen --force --aligner {config[fq_screen_aligner]} --subset $downsample_r2 -conf {config[fq_screen_config]} {input.read_2} --outdir {config[output_directory]}
         mv {config[output_directory]}{wildcards.sample_id_pattern}_*R1*_screen.txt {output.read_1_profile_txt}
         mv {config[output_directory]}{wildcards.sample_id_pattern}_*R1*_screen.html {output.read_1_profile_html}
         mv {config[output_directory]}{wildcards.sample_id_pattern}_*R2*_screen.txt {output.read_2_profile_txt}
